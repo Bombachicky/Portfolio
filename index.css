@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Aquire';
+    src: local('Aquire'),
+        url('./fonts/Aquire-BW0ox.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSans';
+    src: local('OpenSans'),
+        url('./fonts/OpenSans-VariableFont_wdth,wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
