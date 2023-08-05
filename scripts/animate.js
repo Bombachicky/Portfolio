@@ -17,6 +17,7 @@ export default function setup3DScene() {
         specular: 0xffffff, // white specular highlights
         shininess: 100, // higher for smaller and sharper specular highlights
         side: THREE.DoubleSide,
+        emissive: 0x00ff00 // the same green color for emission
     });
     
     const loader = new GLTFLoader();
@@ -89,7 +90,7 @@ export default function setup3DScene() {
     );
     bloomPass.threshold = 0; // controls how bright something needs to be to create bloom
     bloomPass.strength = .1; // controls strength of bloom
-    bloomPass.radius = 1; // controls size of bloom
+    bloomPass.radius = 1.5; // controls size of bloom
 
     // set up composer
     const composer = new EffectComposer(renderer);
