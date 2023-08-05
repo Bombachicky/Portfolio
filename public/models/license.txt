@@ -1,0 +1,11 @@
+Model Information:
+* title:	Neon-Green Medium-Poly Katana
+* source:	https://sketchfab.com/3d-models/neon-green-medium-poly-katana-9ff89868ec134b24bee712b38ff13451
+* author:	SomeoneSae (https://sketchfab.com/SomeoneSae)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Neon-Green Medium-Poly Katana" (https://sketchfab.com/3d-models/neon-green-medium-poly-katana-9ff89868ec134b24bee712b38ff13451) by SomeoneSae (https://sketchfab.com/SomeoneSae) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,5 +1,5 @@
 <template>
-    <div class="navbar flex justify-between">
+    <div class="navbar flex justify-between min-w-screen relative" :class="{'hidden': isHidden}">
         <!-- Left Side of Navbar -->
         <div class="logo flex font-cocomat neonText mx-8 cursor-pointer transition-all duration-200 text-2xl">
             <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" version="1.1">
@@ -10,11 +10,12 @@
             </svg>
         </div>
         <!-- Right side of Navbar -->
-        <div class="flex font-cocomat">
+        <div class="flex font-cocomat relative top-3">
             <div 
                 v-for="link in links"
                 :key="link"
-                class="neonText mx-8 cursor-pointer transition-all duration-200 mt-5"
+                class="neonText mx-8 cursor-pointer transition-all duration-200 relative top-5" 
+                v-motion-slide-visible-once-top
             >
                 {{ link }}
             </div>
@@ -26,8 +27,30 @@
 export default {
     data() {
         return {
-            links: ['Home', 'About', 'Contact', 'Projects', 'Resume']
+            links: ['Home', 'About', 'Projects', 'Contact', 'Resume'],
+            isHidden: false,
+            lastScrollPosition: 0
         };
+    },
+    mounted() {
+        window.addEventListener('scroll', this.handleScroll);
+    },
+    beforeDestroy() {
+        window.removeEventListener('scroll', this.handleScroll);
+    },
+    methods: {
+        handleScroll() {
+            const newScrollPosition = window.scrollY || document.documentElement.scrollTop;
+            if (newScrollPosition > this.lastScrollPosition){
+                // Scrolled down
+                this.isHidden = true;
+            } else {
+                // Scrolled up
+                this.isHidden = false;
+            }
+            // Set the new scroll position for the next scroll event
+            this.lastScrollPosition = newScrollPosition <= 0 ? 0 : newScrollPosition;
+        }
     }
 }
 </script>
@@ -57,5 +80,26 @@ export default {
     .logo:hover .hexagon {
         stroke: #08e67e;
         stroke-width: 4;
+    }
+
+    @keyframes popup {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+svg {
+    animation: popup 1s ease-out;
+}
+
+
+.hidden {
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
     }
 </style>

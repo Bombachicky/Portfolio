@@ -1,7 +1,14 @@
 <template>
-    <div class="bg-no-repeat bg-cover h-screen w-screen"
-        :style="{ backgroundImage: 'url(\'https://images.opencollective.com/nuxtjs/33a2e27/background.png\')' }">
+    <div id ="glow" class="relative bg-no-repeat bg-cover min-h-screen min-w-screen flex flex-col justify-between bg-black">
         <Navbar />
         <Introduction />
+        <Projects />
+        <Contact />
     </div>
 </template>
+
+<script></script>
+
+<style></style>
+
+
