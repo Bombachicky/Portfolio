@@ -1,14 +1,14 @@
 <template>
     <div
     id="contact"
-    class="flex flex-col h-screen justify-center animate drop-shadow-glow text-[#08e67e] font-cocomat" v-motion-slide-visible-once-bottom>
+    class="flex flex-col h-screen justify-center drop-shadow-glow text-[#08e67e] font-cocomat" v-motion-slide-visible-once-bottom>
     <div class="text-4xl md:text-5xl font-bold p-1 text-center">
     Contact me
         </div>
         <div class="flex flex-col px-8 mt-10 items-center">
             <div class="max-w-lg text-lg">
                 <p>
-                If you would like to contact me for any reason, my email is always open!
+                    If you have any questions or would like to get in touch, please contact me through email. I will be happy to respond as soon as I am available.
                 </p>
             </div>
             <a

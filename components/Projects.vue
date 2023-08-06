@@ -2,7 +2,7 @@
     <div id="projects"  class="min-h-[100px]"></div>
     <div class="flex justify-center text-[#08e67e] text-6xl mb-16 font-cocomat" v-motion-slide-visible-once-bottom>Projects</div>
     <div class="flex flex-col items-center">
-        <div class="grid grid-cols-1 lg:grid-cols-3 mt-10 gap-12 px-8 font-cocomat">
+        <div class="grid grid-cols-1 lg:grid-cols-3 grid-rows-3 mt-10 gap-12 px-8 font-cocomat">
             <button class="button" role="button" @mouseover="hoveredButton = 'button1'" @mouseleave="hoveredButton = ''" v-motion-slide-visible-once-bottom>
                 <a href="https://github.com/Bombachicky/MajorMentor">
                     <div class="text-2xl text-[#08e67e]" v-if="hoveredButton != 'button1'">Major Mentor</div>
@@ -92,18 +92,30 @@
                     </div>
                 </a>
             </button>
-            <button class="button" role="button" @mouseover="hoveredButton = 'button4'" @mouseleave="hoveredButton = ''" v-motion-slide-visible-once-bottom>
+            <button class="button" role="button" @mouseover="hoveredButton = 'button6'" @mouseleave="hoveredButton = ''" v-motion-slide-visible-once-bottom>
                 <a href="https://github.com/Bombachicky/Portfolio">
                 <div class="text-2xl">Portfolio Website</div>
                     <div class="grid grid-cols-2">
-                        <AnimatedText :text="'Nuxt'" v-if="hoveredButton != 'button4'" />
+                        <AnimatedText :text="'Nuxt'" v-if="hoveredButton != 'button6'" />
                         <div v-else class="text-black">Nuxt</div>
-                        <AnimatedText :text="'Vue'" v-if="hoveredButton != 'button4'" />
+                        <AnimatedText :text="'Vue'" v-if="hoveredButton != 'button6'" />
                         <div v-else class="text-black">Vue</div>
-                        <AnimatedText :text="'Tailwind'" v-if="hoveredButton != 'button4'" />
+                        <AnimatedText :text="'Tailwind'" v-if="hoveredButton != 'button6'" />
                         <div v-else class="text-black">Tailwind</div>
-                        <AnimatedText :text="'Three.js WebGL'" v-if="hoveredButton != 'button4'" />
+                        <AnimatedText :text="'Three.js WebGL'" v-if="hoveredButton != 'button6'" />
                         <div v-else class="text-black">Three.js WebGL</div>
+                        <!-- Repeat this pattern for all technology tags -->
+                    </div>
+                </a>
+            </button>
+            <button class="button" role="button" @mouseover="hoveredButton = 'button7'" @mouseleave="hoveredButton = ''" v-motion-slide-visible-once-bottom>
+                <a href="https://github.com/Bombachicky/SpaceTycoon">
+                <div class="text-2xl">Space Tycoon</div>
+                    <div class="grid grid-cols-2">
+                        <AnimatedText :text="'Unity'" v-if="hoveredButton != 'button7'" />
+                        <div v-else class="text-black">Unity</div>
+                        <AnimatedText :text="'C#'" v-if="hoveredButton != 'button7'" />
+                        <div v-else class="text-black">C#</div>
                         <!-- Repeat this pattern for all technology tags -->
                     </div>
                 </a>
@@ -167,14 +179,14 @@ button:hover {
     font-family: 'CocoMatReg';
 }
 
-.button-59:active {
+.button:active {
     border-color: #08e67e;
     color: #08e67e;
     fill: #08e67e;
 }
 
 @media (min-width: 768px) {
-    .button-59 {
+    .button {
     min-width: 170px;
     }
 }
