@@ -137,12 +137,12 @@ svg {
 
 
 .hidden {
-        transform: translateY(-100%);
-        transition: transform 0.3s ease;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
 }
 #navbar {
-  position: sticky; /* Make it stick/fixed */
-  top: 0; /* Stay on top */
-  transition: top 0.3s; /* Transition effect when sliding down (and up) */
+    position: sticky; /* Make it stick/fixed */
+    top: 0; /* Stay on top */
+    transition: top 0.3s; /* Transition effect when sliding down (and up) */
 }
 </style>

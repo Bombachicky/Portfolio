@@ -46,27 +46,27 @@
     computed: {
         styles() {
         return {
-            cursorOuter: {
-            position: 'fixed',
-            borderRadius: '50%',
-            pointerEvents: 'none',
-            width: `${this.outerSize}px`,
-            height: `${this.outerSize}px`,
-            backgroundColor: `rgba(${this.color}, ${this.outerAlpha})`,
-            transition: 'opacity 0.15s ease-in-out, transform 0.15s ease-in-out',
-            top: `${this.coords.y}px`,
-            left: `${this.coords.x}px`
+                cursorOuter: {
+                position: 'fixed',
+                borderRadius: '50%',
+                pointerEvents: 'none',
+                width: `${this.outerSize}px`,
+                height: `${this.outerSize}px`,
+                backgroundColor: `rgba(${this.color}, ${this.outerAlpha})`,
+                transition: 'opacity 0.15s ease-in-out, transform 0.15s ease-in-out',
+                top: `${this.coords.y}px`,
+                left: `${this.coords.x}px`
             },
-            cursorInner: {
-            position: 'fixed',
-            borderRadius: '50%',
-            width: `${this.innerSize}px`,
-            height: `${this.innerSize}px`,
-            pointerEvents: 'none',
-            backgroundColor: `rgba(${this.color}, 1)`,
-            transition: 'opacity 0.15s ease-in-out, transform 0.25s ease-in-out',
-            top: `${this.endY}px`,
-            left: `${this.endX}px`
+                cursorInner: {
+                position: 'fixed',
+                borderRadius: '50%',
+                width: `${this.innerSize}px`,
+                height: `${this.innerSize}px`,
+                pointerEvents: 'none',
+                backgroundColor: `rgba(${this.color}, 1)`,
+                transition: 'opacity 0.15s ease-in-out, transform 0.25s ease-in-out',
+                top: `${this.endY}px`,
+                left: `${this.endX}px`
             }
         };
         }
@@ -100,39 +100,39 @@
     },
     methods: {
         onMouseMove(e) {
-        this.coords.x = e.clientX;
-        this.coords.y = e.clientY;
-        this.endX = e.clientX;
-        this.endY = e.clientY;
+            this.coords.x = e.clientX;
+            this.coords.y = e.clientY;
+            this.endX = e.clientX;
+            this.endY = e.clientY;
         },
         onMouseDown() {
-        this.isActive = true;
+            this.isActive = true;
         },
         onMouseUp() {
-        this.isActive = false;
+            this.isActive = false;
         },
         onMouseEnter() {
-        this.isVisible = true;
+            this.isVisible = true;
         },
         onMouseLeave() {
-        this.isVisible = false;
+            this.isVisible = false;
         },
         onElementMouseOver() {
-        this.isActive = true;
+            this.isActive = true;
         },
         onElementClick() {
-        this.isActive = true;
-        this.isActiveClickable = false;
+            this.isActive = true;
+            this.isActiveClickable = false;
         },
         onElementMouseDown() {
-        this.isActiveClickable = true;
+            this.isActiveClickable = true;
         },
         onElementMouseUp() {
-        this.isActive = true;
+            this.isActive = true;
         },
         onElementMouseOut() {
-        this.isActive = false;
-        this.isActiveClickable = false;
+            this.isActive = false;
+            this.isActiveClickable = false;
         }
     }
     };
@@ -141,19 +141,19 @@
     <style>
     /* Global styles */
     :root {
-    --color-cursor: 0, 255, 0;
-    --cursor-outline-shade: 0.3;
-    --cursor-size: 10px;
-    --cursor-outline-size: 12px;
+        --color-cursor: 0, 255, 0;
+        --cursor-outline-shade: 0.3;
+        --cursor-size: 10px;
+        --cursor-outline-size: 12px;
     }
 
     #inner {
-    background-color: rgba(var(--color-cursor), 1);
-    box-shadow: 0 0 10px 5px rgba(0, 255, 0, 0.3); 
+        background-color: rgba(var(--color-cursor), 1);
+        box-shadow: 0 0 10px 5px rgba(0, 255, 0, 0.3); 
     }
 
     #outer {
-    background-color: rgba(var(--color-cursor), var(--cursor-outline-shade));
-    box-shadow: 0 0 15px 7px rgba(0, 255, 0, 0.2);
+        background-color: rgba(var(--color-cursor), var(--cursor-outline-shade));
+        box-shadow: 0 0 15px 7px rgba(0, 255, 0, 0.2);
     }
 </style>
