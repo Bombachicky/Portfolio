@@ -12,8 +12,10 @@
                     <div class="grid grid-cols-2">
                         <AnimatedText :text="'React'" v-if="hoveredButton != 'button1'" />
                         <div v-else class="text-black">React</div>
-                        <AnimatedText :text="'React'" v-if="hoveredButton != 'button1'" />
+                        <AnimatedText :text="'Astro'" v-if="hoveredButton != 'button1'" />
                         <div v-else class="text-black">Astro</div>
+                        <AnimatedText :text="'Typescript'" v-if="hoveredButton != 'button1'" />
+                        <div v-else class="text-black">Typescript</div>
                         <AnimatedText :text="'Node'" v-if="hoveredButton != 'button1'" />
                         <div v-else class="text-black">Node</div>
                         <AnimatedText :text="'Tailwind'" v-if="hoveredButton != 'button1'" />
@@ -105,6 +107,8 @@
                         <div v-else class="text-black">Nuxt</div>
                         <AnimatedText :text="'Vue'" v-if="hoveredButton != 'button6'" />
                         <div v-else class="text-black">Vue</div>
+                        <AnimatedText :text="'Javascript'" v-if="hoveredButton != 'button6'" />
+                        <div v-else class="text-black">Javascript</div>
                         <AnimatedText :text="'Tailwind'" v-if="hoveredButton != 'button6'" />
                         <div v-else class="text-black">Tailwind</div>
                         <AnimatedText :text="'Three.js WebGL'" v-if="hoveredButton != 'button6'" />
