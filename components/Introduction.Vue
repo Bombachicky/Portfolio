@@ -17,21 +17,29 @@
                     <div class="text-orange-400" v-motion-slide-visible-once-bottom>▹AWS</div>
                 </div>
             </div>
-            <div class="" id="container3D"></div>
+            <div v-if="isClient" class="" id="container3D"></div>
     </div>
 </template>
 
 <script>
     import { onMounted } from 'vue';
-    import setup3DScene from 'public/scripts/animate.js'; // replace with your actual path
+    import setup3DScene from 'public/scripts/animate.js' // replace with your actual path
 
     export default {
     setup() {
+        const isClient = ref(false);
+
         onMounted(() => {
-        setup3DScene();
+            isClient.value = true;
+
+            nextTick(() => {
+                setup3DScene();
+            });
         });
-    },
-    };    
+
+        return { isClient };
+    }
+};
 </script>
 
 <style lang="scss">
