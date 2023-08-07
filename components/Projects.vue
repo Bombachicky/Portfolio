@@ -104,6 +104,8 @@
                         <div v-else class="text-black">Tailwind</div>
                         <AnimatedText :text="'Three.js WebGL'" v-if="hoveredButton != 'button6'" />
                         <div v-else class="text-black">Three.js WebGL</div>
+                        <AnimatedText :text="'Vercel'" v-if="hoveredButton != 'button6'" />
+                        <div v-else class="text-black">Vercel</div>
                         <!-- Repeat this pattern for all technology tags -->
                     </div>
                 </a>
