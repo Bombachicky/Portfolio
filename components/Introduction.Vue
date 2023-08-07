@@ -23,7 +23,7 @@
 
 <script>
     import { onMounted } from 'vue';
-    import setup3DScene from '~/scripts/animate'; // replace with your actual path
+    import setup3DScene from 'public/scripts/animate.js'; // replace with your actual path
 
     export default {
     setup() {
