@@ -78,7 +78,7 @@
                         <div v-else class="text-black">Discord.js</div>
                         <AnimatedText :text="'Javascript'" v-if="hoveredButton != 'button5'" />
                         <div v-else class="text-black">Javascript</div>
-                        <AnimatedText :text="'HTML'" v-if="hoveredButton != 'button5'" />
+                        <AnimatedText :text="'Prisma'" v-if="hoveredButton != 'button5'" />
                         <div v-else class="text-black">Prisma</div>
                         <AnimatedText :text="'mySQL'" v-if="hoveredButton != 'button5'" />
                         <div v-else class="text-black">mySQL</div>
