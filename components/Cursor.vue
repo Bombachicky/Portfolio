@@ -1,7 +1,7 @@
     <template>
     <div>
-        <div id="outer" ref="cursorOuterRef" :style="styles.cursorOuter"></div>
-        <div id="inner" ref="cursorInnerRef" :style="styles.cursorInner"></div>
+        <div id="outer" :style="mergedOuterStyles"></div>
+        <div id="inner" :style="mergedInnerStyles"></div>
     </div>
     </template>
 
@@ -36,12 +36,13 @@
     data() {
         return {
         coords: { x: 0, y: 0 },
+        endCoords: { x: 0, y: 0 }, // new addition
         isVisible: true,
         isActive: false,
         isActiveClickable: false,
-        endX: 0,
-        endY: 0
-        };
+        innerStyles: {},
+        outerStyles: {}
+    };
     },
     computed: {
         styles() {
@@ -65,11 +66,17 @@
                 pointerEvents: 'none',
                 backgroundColor: `rgba(${this.color}, 1)`,
                 transition: 'opacity 0.15s ease-in-out, transform 0.25s ease-in-out',
-                top: `${this.endY}px`,
-                left: `${this.endX}px`
+                top: `${this.endCoords.y}px`,  // Changed this
+                left: `${this.endCoords.x}px`  // Changed this
             }
-        };
-        }
+            };
+        },
+        mergedInnerStyles() {
+            return { ...this.styles.cursorInner, ...this.innerStyles };
+        },
+        mergedOuterStyles() {
+            return { ...this.styles.cursorOuter, ...this.outerStyles };
+        },
     },
     mounted() {
         document.addEventListener('mousemove', this.onMouseMove);
@@ -79,7 +86,7 @@
         document.addEventListener('mouseleave', this.onMouseLeave);
 
         const clickables = document.querySelectorAll(
-        'a, input[type="submit"], input[type="image"], label[for], select, button, .link'
+            'a, input[type="submit"], input[type="image"], label[for], select, button, .link'
         );
 
         clickables.forEach((el) => {
@@ -102,8 +109,13 @@
         onMouseMove(e) {
             this.coords.x = e.clientX;
             this.coords.y = e.clientY;
-            this.endX = e.clientX;
-            this.endY = e.clientY;
+            this.endCoords.x = e.clientX;
+            this.endCoords.y = e.clientY;
+
+            this.outerStyles = {
+                '--x': `${this.endCoords.x - this.coords.x}px`,
+                '--y': `${this.endCoords.y - this.coords.y}px`
+            };
         },
         onMouseDown() {
             this.isActive = true;
@@ -149,11 +161,28 @@
 
     #inner {
         background-color: rgba(var(--color-cursor), 1);
-        box-shadow: 0 0 10px 5px rgba(0, 255, 0, 0.3); 
+        box-shadow: 0 0 10px 5px rgba(0, 255, 0, 0.3);
+        position: relative; 
     }
 
     #outer {
         background-color: rgba(var(--color-cursor), var(--cursor-outline-shade));
-        box-shadow: 0 0 15px 7px rgba(0, 255, 0, 0.2);
+        box-shadow: 0 0 30px 7px rgba(0, 255, 0, 0.2);
+    }
+
+    #inner::after {
+        content: "";
+        position: absolute;
+        top: calc(var(--y, 0) * 1px - 75px);  /* Centering for bigger glow */
+        left: calc(var(--x, 0) * 1px - 75px);  /* Centering for bigger glow */
+        width: 150px;  /* Increased size of glow */
+        height: 150px;  /* Increased size of glow */
+        background: radial-gradient(white, rgba(var(--color-cursor), 0) 90%);  /* Adjusted gradient stop */
+        opacity: 0;
+        transition: opacity 0.2s;
+    }
+
+    #inner:hover::after {
+        opacity: 0.6;  /* Increased opacity for a brighter glow */
     }
 </style>

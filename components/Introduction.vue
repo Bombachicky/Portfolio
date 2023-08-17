@@ -1,6 +1,6 @@
 <template>
     <div class="flex justify-between">
-            <div class="text-[#08e67e] font-cocomat mx-auto py-auto sm:py-4 md:py-16 min-w-screen max-w-screen-lg sm:px-4 md:px-0 flex flex-col justify-center">
+            <div class="text-[#08e67e] font-cocomat mx-auto py-auto sm:py-4 md:py-16 min-w-screen max-w-screen-lg sm:px-4 md:px-12 flex flex-col justify-center">
                 <div class="small">
                     <div class="text-xl md:text-2xl" v-motion-slide-visible-once-bottom>Hi, my name is</div>
                 </div>
