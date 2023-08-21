@@ -132,6 +132,43 @@
                     </div>
                 </a>
             </button>
+            <button class="button" role="button" @mouseover="hoveredButton = 'button8'" @mouseleave="hoveredButton = ''" v-motion-slide-visible-once-bottom>
+                <a href="https://github.com/Bombachicky/TTS-AI" >
+                    <div class="text-2xl">Overtone</div>
+                    <div class="text-md">A text-to-speech AI platform that leverages AWS Polly to convert user input into lifelike speech with the options for 
+                                        pitch, speed, and voice modifications.
+                    </div>
+                    <div class="grid grid-cols-2">
+                        <AnimatedText :text="'Next'" v-if="hoveredButton != 'button8'" />
+                        <div v-else class="text-black">Next</div>
+                        <AnimatedText :text="'React'" v-if="hoveredButton != 'button8'" />
+                        <div v-else class="text-black">React</div>
+                        <AnimatedText :text="'Tailwind'" v-if="hoveredButton != 'button8'" />
+                        <div v-else class="text-black">Tailwind</div>
+                        <AnimatedText :text="'RadixUI'" v-if="hoveredButton != 'button8'" />
+                        <div v-else class="text-black">RadixUI</div>
+                        <AnimatedText :text="'AWS'" v-if="hoveredButton != 'button8'" />
+                        <div v-else class="text-black">AWS</div>
+                        <AnimatedText :text="'Lambda'" v-if="hoveredButton != 'button8'" />
+                        <div v-else class="text-black">Lambda</div>
+                        <AnimatedText :text="'Cognito'" v-if="hoveredButton != 'button8'" />
+                        <div v-else class="text-black">Cognito</div>
+                        <AnimatedText :text="'OpenAI API'" v-if="hoveredButton != 'button8'" />
+                        <div v-else class="text-black">OpenAI API</div>
+                        <AnimatedText :text="'Polly'" v-if="hoveredButton != 'button8'" />
+                        <div v-else class="text-black">Polly</div>
+                        <AnimatedText :text="'DynamoDB'" v-if="hoveredButton != 'button8'" />
+                        <div v-else class="text-black">DynamoDB</div>
+                        <AnimatedText :text="'Go'" v-if="hoveredButton != 'button8'" />
+                        <div v-else class="text-black">Go</div>
+                        <AnimatedText :text="'Typescript'" v-if="hoveredButton != 'button8'" />
+                        <div v-else class="text-black">Typescript</div>
+                        <AnimatedText :text="'Docker'" v-if="hoveredButton != 'button8'" />
+                        <div v-else class="text-black">Docker</div>
+                        <!-- Repeat this pattern for all technology tags -->
+                    </div>
+                </a>
+            </button>
             <!-- Continue the same for all buttons -->
         </div>
     </div>
