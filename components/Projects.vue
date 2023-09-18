@@ -169,6 +169,30 @@
                     </div>
                 </a>
             </button>
+            <button class="button" role="button" @mouseover="hoveredButton = 'button9'" @mouseleave="hoveredButton = ''" v-motion-slide-visible-once-bottom>
+                <a href="https://devpost.com/software/chess-10">
+                <div class="text-2xl">Chess Ten</div>
+                <div class="text-md">Collaborated in a team to develop Chess Ten, a groundbreaking three-dimensional chess game with re-imagined rules, which won
+                                    first place among over twelve-hundred participants at the ShellHacks Hackathon.</div>
+                    <div class="grid grid-cols-2">
+                        <AnimatedText :text="'React'" v-if="hoveredButton != 'button9'" />
+                        <div v-else class="text-black">React</div>
+                        <AnimatedText :text="'Tailwind'" v-if="hoveredButton != 'button9'" />
+                        <div v-else class="text-black">Tailwind</div>
+                        <AnimatedText :text="'Typescript'" v-if="hoveredButton != 'button9'" />
+                        <div v-else class="text-black">Typescript</div>
+                        <AnimatedText :text="'Three.js'" v-if="hoveredButton != 'button9'" />
+                        <div v-else class="text-black">Three.js</div>
+                        <AnimatedText :text="'Vanta.js'" v-if="hoveredButton != 'button9'" />
+                        <div v-else class="text-black">Vanta.js</div>
+                        <AnimatedText :text="'Blender'" v-if="hoveredButton != 'button9'" />
+                        <div v-else class="text-black">Blender</div>
+                        <AnimatedText :text="'WebSocket'" v-if="hoveredButton != 'button9'" />
+                        <div v-else class="text-black">WebSocket</div>
+                        <!-- Repeat this pattern for all technology tags -->
+                    </div>
+                </a>
+            </button>
             <!-- Continue the same for all buttons -->
         </div>
     </div>
